@@ -59,8 +59,8 @@ aboutNextBtn.addEventListener('click', function() {
 const swiperProducts = new Swiper('.products-wrapper', {
     loop: true,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next-1',
+        prevEl: '.swiper-button-prev-1',
     },
     slidesPerView: 5,
     spaceBetween: 50,
@@ -91,3 +91,58 @@ const swiperProducts = new Swiper('.products-wrapper', {
     }
 });
 /* Swiper Products */
+
+const swiperGallery = new Swiper('.swiper-gallery', {
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next-2',
+        prevEl: '.swiper-button-prev-2',
+    },
+    slidesPerView: 2,
+    spaceBetween: 30,
+    breakpoints: {
+        1275: {
+            slidesPerView: 2,
+            // spaceBetween: 30,
+        },
+        1000: {
+            slidesPerView: 2,
+            // spaceBetween: 25,
+        },
+        677: {
+            slidesPerView: 1,
+            // spaceBetween: 20,
+        },
+        600: {
+            // spaceBetween: 10,
+        },
+        375: {
+            slidesPerView: 1,
+            // spaceBetween: 10,
+        },
+        280: {
+            slidesPerView: 1,
+            // spaceBetween: 20,
+        }
+    }
+});
+/* Swiper Gallery */
+
+/* Swiper galleries */
+const swiper = new Swiper(".swiper-main", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet(index, className) {
+            const thumb = this.slides[index].dataset.thumb;
+            const text = this.slides[index].dataset.text;
+            return (
+                `<div class="${className}">
+                    <img class="swiper-pagination-image" src="${thumb}">
+                    <span>${text}</span>
+                </div>`
+            );
+        }
+    },
+});
+/* Swiper galleries */
