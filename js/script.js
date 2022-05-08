@@ -14,6 +14,21 @@ const aboutNextBtn = document.querySelector('.about-mob-next');
 const aboutMobNext = document.querySelector('.about-next');
 const aboutMobNext2 = document.getElementById('about-next-2');
 
+// Hide header with scroll
+
+let prevScrollPos = window.scrollY;
+window.addEventListener('scroll', function() {
+    let currentScrollPos = window.scrollY;
+    if (prevScrollPos > currentScrollPos) {
+        header.style.top = '0';
+    } else {
+        header.style.top = '-150px';
+    }
+    prevScrollPos = currentScrollPos
+});
+
+// Hide header with scroll
+
 /* catalog */
 function handleOpen() {
     headerDrop.classList.add('is-active')
@@ -156,18 +171,3 @@ const swiper = new Swiper(".swiper-main", {
     },
 });
 /* Swiper galleries */
-
-// Hide header with scroll
-
-let prevScrollPos = window.scrollY;
-window.addEventListener('scroll', function() {
-    let currentScrollPos = window.scrollY;
-    if (prevScrollPos > currentScrollPos) {
-        header.style.top = '0';
-    } else {
-        header.style.top = '-150px';
-    }
-    prevScrollPos = currentScrollPos
-});
-
-// Hide header with scroll
