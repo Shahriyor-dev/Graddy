@@ -11,27 +11,32 @@ const mobileDropList = document.querySelector('.mobile-drop-list');
 const menuCloseBtn = document.querySelector('.menu-close-btn');
 const mobileBurger = document.querySelector('.header-mobile-burger');
 const aboutNextBtn = document.querySelector('.about-mob-next');
-const aboutMobNext = document.querySelector('.about-next')
+const aboutMobNext = document.querySelector('.about-next');
+const aboutMobNext2 = document.getElementById('about-next-2');
 
 /* catalog */
-catalogBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        headerDrop.classList.toggle('is-active')
-        if (headerDrop.classList.contains('is-active')) {
-            headerSearch.classList.remove('is-active')
-            headerPhonenumber.classList.remove('is-active')
-            headerEmail.classList.remove('is-active')
-            catalogBtn.style.color = '#FF7A3E'
-            header.style.background = 'rgba(0, 65, 71, .8)'
-        } else {
-            headerSearch.classList.add('is-active')
-            headerEmail.classList.add('is-active')
-            headerPhonenumber.classList.add('is-active')
-            catalogBtn.style.color = '#fff'
-            header.style.background = 'rgba(0, 65, 71, .5)'
-        }
-    })
-    /* catalog */
+function handleOpen() {
+    headerDrop.classList.add('is-active')
+    headerSearch.classList.remove('is-active')
+    headerPhonenumber.classList.remove('is-active')
+    headerEmail.classList.remove('is-active')
+    catalogBtn.style.color = '#FF7A3E'
+    header.style.background = 'rgba(0, 65, 71, .8)'
+};
+
+function handleClose() {
+    headerDrop.classList.remove('is-active')
+    headerSearch.classList.add('is-active')
+    headerEmail.classList.add('is-active')
+    headerPhonenumber.classList.add('is-active')
+    catalogBtn.style.color = '#fff'
+    header.style.background = 'rgba(0, 65, 71, .5)'
+}
+
+catalogBtn.addEventListener('mouseenter', handleOpen);
+
+header.addEventListener('mouseleave', handleClose);
+/* catalog */
 
 /* Burger menu */
 mobileDropBtn.addEventListener('click', function(e) {
@@ -51,7 +56,8 @@ mobileBurger.addEventListener('click', function(e) {
 /* aboutNext */
 aboutNextBtn.addEventListener('click', function() {
         aboutMobNext.classList.add('active');
-        aboutNextBtn.style.display = 'none'
+        aboutMobNext2.style.display = 'block';
+        aboutNextBtn.style.display = 'none';
     })
     /* aboutNext */
 
@@ -130,6 +136,10 @@ const swiperGallery = new Swiper('.swiper-gallery', {
 
 /* Swiper galleries */
 const swiper = new Swiper(".swiper-main", {
+    navigation: {
+        nextEl: '.swiper-main-button-next',
+        prevEl: '.swiper-main-button-prev',
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -146,3 +156,18 @@ const swiper = new Swiper(".swiper-main", {
     },
 });
 /* Swiper galleries */
+
+// Hide header with scroll
+
+let prevScrollPos = window.scrollY;
+window.addEventListener('scroll', function() {
+    let currentScrollPos = window.scrollY;
+    if (prevScrollPos > currentScrollPos) {
+        header.style.top = '0';
+    } else {
+        header.style.top = '-150px';
+    }
+    prevScrollPos = currentScrollPos
+});
+
+// Hide header with scroll
