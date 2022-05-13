@@ -1556,7 +1556,7 @@
         position: absolute;
         top: 4px;
         padding: 4px;
-        left: 3px;
+        left: 4px;
         clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
         background: linear-gradient(0, #262626 0%, rgba(0, 0, 0, 0.15) 55.07%);
     }
@@ -1889,7 +1889,7 @@
             /*position: relative;*/
         }
         .main .swiper-pagination-image-wrapper::after {
-            width: 97.5%;
+            width: 98%;
             height: 98%;
             top: 4px;
             left: 3px;
@@ -2590,7 +2590,13 @@
         }
         [data="swiper-product-gallery"] .swiper-pagination-bullet .swiper-pagination-bg div {
             width: 26%;
-            height: 100%;
+            height: 98%;
+        }
+        [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 3) .swiper-pagination-bg {
+            left: calc(100% + 18px);
+        }
+        [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 1) .swiper-pagination-bg {
+            right: calc(100% + 15px);
         }
     }
     @media(max-width: 1180px) {
