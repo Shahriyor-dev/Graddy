@@ -304,9 +304,7 @@
         cursor: pointer;
     }
 
-    
-
-{
+    .filter-tools {
         display: none;
     }
 
@@ -1371,14 +1369,6 @@
         .header {
             padding: 17px 2px 10px;
         }
-        .filter-tools{
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .filter-mobile-burger{
-            margin-bottom: 5px;
-        }
     }
     
     @media(max-width: 320px) {
@@ -1664,7 +1654,6 @@
 
     .content-items {
         display: flex;
-        align-items:start;
     }
 
     .content-products {
@@ -1835,10 +1824,7 @@
         font-size: 16px;
         text-decoration: underline;
         border: none;
-        display: block;
-        margin: 13px 0 0 0;
-        padding:0;
-        padding-left: 0px;
+        padding: 6px 15px;
     }
 
     .mob-content-aside-item .btn-reset {
@@ -1903,10 +1889,10 @@
             /*position: relative;*/
         }
         .main .swiper-pagination-image-wrapper::after {
-            width: 98%;
+            width: 97.5%;
             height: 98%;
-            top: 3px;
-            left: 4px;
+            top: 4px;
+            left: 3px;
         }
         .main .swiper-pagination-bullet span {
             /*display: block;*/
@@ -2027,9 +2013,10 @@
             /*pointer-events: none;*/
         }
         .main .swiper-pagination-image-wrapper::after {
-            height: 97%;
+            height: 98%;
             width: 98%;
             left: 2px;
+            top: 2px;
         }
         .main .swiper-pagination-bullet {
             /*grid-column-end: span 2;*/
@@ -2394,7 +2381,7 @@
     /* Product Gallery */
 
     [data="swiper-product-gallery"].swiper-main {
-        padding-bottom: 50px;
+        padding-bottom: 53px;
     }
 
     [data="swiper-product-gallery"] .swiper-wrapper {
@@ -2436,7 +2423,7 @@
         display: flex;
         align-items: center;
         position: absolute;
-        top: 0;
+        top: -1px;
         pointer-events: none;
     }
 
@@ -2454,7 +2441,7 @@
 
     /* Bg right side */
     [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 3) .swiper-pagination-bg {
-        left: calc(100% + 20px);
+        left: calc(100% + 27px);
     }
 
     [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 3) .swiper-pagination-bg div {
@@ -2477,7 +2464,7 @@
     /* Bg left side */
     [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 1) .swiper-pagination-bg {
         justify-content: flex-end;
-        right: calc(100% + 24px);
+        right: calc(100% + 19px);
     }
 
     [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 1) .swiper-pagination-bg div {
@@ -2524,11 +2511,11 @@
 
         [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 1) .swiper-pagination-bg {
             justify-content: flex-end;
-            right: calc(100% + 25px);
+            right: calc(100% + 19px);
         }
 
         [data="swiper-product-gallery"] .swiper-pagination-bullet .swiper-pagination-bg {
-            top: -7px;
+            top: -1px;
         }
     }
 
@@ -2557,11 +2544,12 @@
 
         [data="swiper-product-gallery"] .swiper-pagination-bullet .swiper-pagination-bg div {
             /* width: 25%; */
-            height: 100%;
+            height: 98%;
+            width: 343px;
         }
 
         [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 3) .swiper-pagination-bg {
-            left: calc(100% + 24px);
+            left: calc(100% + 21px);
         }
     
         [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 3) .swiper-pagination-bg div {
@@ -2575,7 +2563,7 @@
     
         /* Bg left side */
         [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 1) .swiper-pagination-bg {
-            right: calc(100% + 14px);
+            right: calc(100% + 19px);
         }
     
         [data="swiper-product-gallery"] .swiper-pagination-bullet:nth-child(3n + 1) .swiper-pagination-bg div {
