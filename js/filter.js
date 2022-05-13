@@ -43,7 +43,7 @@ mobProductsBtn.addEventListener('click', function() {
     });
 })
 
-// filter-select
+// filter-select-mob
 
 const selectBtn = document.querySelector('.custom-select');
 const selectDropDown = document.querySelector('.select-dropdown');
@@ -62,3 +62,40 @@ selectDropDownList.children.forEach(element => {
         selectBtn.classList.remove('active');
     });
 });
+
+// filter-select
+
+const popularBtn = document.querySelector('.popular');
+const costUpBtn = document.querySelector('.cost-up');
+const constDownBtn = document.querySelector('.cost-down');
+
+popularBtn.addEventListener('click', function() {
+    if(popularBtn.classList.contains('is-active')) {
+        return
+    } else {
+        popularBtn.classList.add('is-active');
+        costUpBtn.classList.remove('is-active');
+        constDownBtn.classList.remove('is-active');
+    }
+});
+
+costUpBtn.addEventListener('click', function() {
+    if(costUpBtn.classList.contains('is-active')) {
+        return
+    } else {
+        costUpBtn.classList.add('is-active');
+        popularBtn.classList.remove('is-active');
+        constDownBtn.classList.remove('is-active');
+    }
+});
+
+constDownBtn.addEventListener('click', function() {
+    if(constDownBtn.classList.contains('is-active')) {
+        return
+    } else {
+        constDownBtn.classList.add('is-active');
+        costUpBtn.classList.remove('is-active');
+        popularBtn.classList.remove('is-active');
+    }
+});
+
