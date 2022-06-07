@@ -43,34 +43,15 @@ mobProductsBtn.addEventListener('click', function() {
     });
 })
 
-// filter-select-mob
-
-const selectBtn = document.querySelector('.custom-select');
-const selectDropDown = document.querySelector('.select-dropdown');
-const selectDropDownList = document.querySelector('.select-dropdown ul');
-
-selectBtn.addEventListener('click', function() {
-    selectBtn.classList.toggle('active');
-    selectDropDown.classList.toggle('active');
-});
-
-selectDropDownList.children.forEach(element => {
-    element.addEventListener('click', function(e) {
-        const value = e.target.textContent;
-        selectBtn.textContent = value;
-        selectDropDown.classList.remove('active');
-        selectBtn.classList.remove('active');
-    });
-});
-
 // filter-select
 
 const popularBtn = document.querySelector('.popular');
 const costUpBtn = document.querySelector('.cost-up');
 const constDownBtn = document.querySelector('.cost-down');
 
-popularBtn.addEventListener('click', function() {
-    if(popularBtn.classList.contains('is-active')) {
+popularBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (popularBtn.classList.contains('is-active')) {
         return
     } else {
         popularBtn.classList.add('is-active');
@@ -79,8 +60,9 @@ popularBtn.addEventListener('click', function() {
     }
 });
 
-costUpBtn.addEventListener('click', function() {
-    if(costUpBtn.classList.contains('is-active')) {
+costUpBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (costUpBtn.classList.contains('is-active')) {
         return
     } else {
         costUpBtn.classList.add('is-active');
@@ -89,8 +71,9 @@ costUpBtn.addEventListener('click', function() {
     }
 });
 
-constDownBtn.addEventListener('click', function() {
-    if(constDownBtn.classList.contains('is-active')) {
+constDownBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (constDownBtn.classList.contains('is-active')) {
         return
     } else {
         constDownBtn.classList.add('is-active');
@@ -98,4 +81,3 @@ constDownBtn.addEventListener('click', function() {
         popularBtn.classList.remove('is-active');
     }
 });
-
