@@ -1,0 +1,61 @@
+.content-top-item .desktop-img {
+    float: right;
+    margin-left: 24px;
+}
+
+.mobile-img {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .mobile-img {
+        display: block;
+        width: 100%;
+    }
+    .content-top-item .desktop-img {
+        display: none;
+    }
+
+}
+
+.content-top-item h2 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'El Messiri';
+    line-height: 149.9%;
+    text-transform: uppercase;
+    color: #4c4c4c;
+    margin-bottom: 16px;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 23.98px;
+    color: #4c4c4c;
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    font-size: 20px;
+    font-family: 'El Messiri';
+    font-weight: 600;
+    line-height: 30px;
+    color: #4C4C4C;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+@media (max-width:550px) {
+    .content-card:nth-child(n+3) {
+        margin-top: 2%;
+    }
+}
+
+
+@media (max-width:374px) {
+    .content-card-name, .content-card-download {
+        font-size: 12px;
+    }
+}
